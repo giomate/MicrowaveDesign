@@ -1,0 +1,11 @@
+close all
+clear
+clc
+w0=3.4e+03;
+l0=4.6e+03;
+fl0=9.65e3;
+
+x0=[ w0 l0 fl0];
+fun=@CouLine;
+options = optimset('Display','iter','PlotFcns',@optimplotfval);
+[x,fval,exitflag,output] = fminsearch(fun,x0,options)
